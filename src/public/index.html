@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Películas</title>
+</head>
+<body>
+
+    <h1>Lista de Películas 🎬</h1>
+
+    <div id="contenedor"></div>
+
+    <script>
+        fetch('http://localhost:3000/api/peliculas')
+            .then(res => res.json())
+            .then(data => {
+
+                const contenedor = document.getElementById('contenedor');
+
+                data.forEach(pelicula => {
+                    contenedor.innerHTML += `
+                        <div style="margin-bottom:20px;">
+                            <h2>${pelicula.titulo}</h2>
+                            <p><strong>Género:</strong> ${pelicula.genero}</p>
+                            <p><strong>Director:</strong> ${pelicula.director}</p>
+                            <img src="http://localhost:3000${pelicula.imagen}" width="200">
+                            <hr>
+                        </div>
+                    `;
+                });
+
+            });
+    </script>
+
+</body>
+</html>
