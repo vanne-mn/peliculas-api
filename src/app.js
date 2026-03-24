@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+// 🔥 IMPORTAR RUTAS
 const generoRoutes = require('./routes/genero.routes');
 const directorRoutes = require('./routes/director.routes');
 const productoraRoutes = require('./routes/productora.routes');
@@ -11,20 +12,27 @@ const peliculaRoutes = require('./routes/pelicula.routes');
 
 const app = express();
 
-// Middlewares
+// 🔹 Middlewares
 app.use(cors());
 app.use(express.json());
 
-// 🔥 Servir toda la carpeta public (HTML + imágenes)
+// 🔹 Archivos estáticos (HTML + imágenes)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rutas API
-app.use('/api/generos', generoRoutes);
-app.use('/api/directores', directorRoutes);
-app.use('/api/productoras', productoraRoutes);
-app.use('/api/tipos', tipoRoutes);
-app.use('/api/media', mediaRoutes);
+// 🔥 PRUEBA: SOLO UNA RUTA ACTIVA
+// (para encontrar el error)
+
+// app.use('/api/generos', generoRoutes);
+// app.use('/api/directores', directorRoutes);
+// app.use('/api/productoras', productoraRoutes);
+// app.use('/api/tipos', tipoRoutes);
+// app.use('/api/media', mediaRoutes);
+
 app.use('/api/peliculas', peliculaRoutes);
 
-module.exports = app;
+// 🔹 Ruta base de prueba
+app.get('/', (req, res) => {
+  res.send('API funcionando 🚀');
+});
 
+module.exports = app;
