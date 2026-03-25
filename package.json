@@ -2,9 +2,9 @@
   "name": "peliculas-api",
   "version": "1.0.0",
   "description": "API de películas",
-  "main": "src/app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
