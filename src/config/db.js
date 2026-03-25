@@ -1,10 +1,12 @@
-
-
-const mysql = require('mysql2');
+import { createConnection } from 'mysql2';
 require('dotenv').config();
 
-console.log("DATABASE_URL:", process.env.DATABASE_URL);
-const connection = mysql.createConnection(process.env.DATABASE_URL);
+const connection = createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+});
 
 connection.connect((err) => {
     if (err) {
@@ -14,5 +16,4 @@ connection.connect((err) => {
     }
 });
 
-module.exports = connection;
-
+export default connection;
