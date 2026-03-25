@@ -1,6 +1,6 @@
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
-import connection from '../config/db.js';
+
 dotenv.config();
 
 const connection = mysql.createConnection({
