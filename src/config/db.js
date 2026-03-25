@@ -1,7 +1,5 @@
 import mysql from 'mysql2';
-import dotenv from 'dotenv';
 
-dotenv.config({ override: true });
 console.log("HOST:", process.env.DB_HOST);
 
 const connection = mysql.createConnection({
