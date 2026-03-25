@@ -11,7 +11,7 @@
     <div id="contenedor"></div>
 
     <script>
-        fetch('http://localhost:3000/api/peliculas')
+        fetch('https://peliculas-api-production.up.railway.app/api/peliculas')
             .then(res => res.json())
             .then(data => {
 
@@ -23,7 +23,7 @@
                             <h2>${pelicula.titulo}</h2>
                             <p><strong>Género:</strong> ${pelicula.genero}</p>
                             <p><strong>Director:</strong> ${pelicula.director}</p>
-                            <img src="http://localhost:3000${pelicula.imagen}" width="200">
+                            <img src="https://peliculas-api-production.up.railway.app${pelicula.imagen}" width="200">
                             <hr>
                         </div>
                     `;
