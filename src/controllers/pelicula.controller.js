@@ -1,4 +1,4 @@
-const db = require('../config/db').default;
+const db = require('../config/db');
 
 
 // 🔹 Obtener todas las películas con género, director, tipo, productora e imagen

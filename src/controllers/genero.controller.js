@@ -1,4 +1,4 @@
-const db = require('../config/db').default;
+const db = require('../config/db');
 
 exports.getGeneros = (req, res) => {
     db.query('SELECT * FROM genero', (err, results) => {
